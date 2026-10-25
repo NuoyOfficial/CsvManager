@@ -1,0 +1,30 @@
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\bin\Debug\net10.0\testcsv1.exe
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\bin\Debug\net10.0\testcsv1.deps.json
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\bin\Debug\net10.0\testcsv1.runtimeconfig.json
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\bin\Debug\net10.0\testcsv1.dll
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\bin\Debug\net10.0\testcsv1.pdb
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.AssemblyInfoInputs.cache
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.AssemblyInfo.cs
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.csproj.CoreCompileInputs.cache
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.dll
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\obj\Debug\net10.0\refint\testcsv1.dll
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.pdb
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.genruntimeconfig.cache
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\obj\Debug\net10.0\ref\testcsv1.dll
+C:\Users\matis\Desktop\testcsv\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.csproj.Up2Date
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\bin\Debug\net10.0\testcsv1.exe
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\bin\Debug\net10.0\testcsv1.deps.json
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\bin\Debug\net10.0\testcsv1.runtimeconfig.json
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\bin\Debug\net10.0\testcsv1.dll
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\bin\Debug\net10.0\testcsv1.pdb
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.AssemblyInfoInputs.cache
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.AssemblyInfo.cs
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.csproj.CoreCompileInputs.cache
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.dll
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\obj\Debug\net10.0\refint\testcsv1.dll
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.pdb
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.genruntimeconfig.cache
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\obj\Debug\net10.0\ref\testcsv1.dll
+C:\Users\matis\Documents\Informatique\Programmation\C#\Visual Studio\ProjetPerso\LectureFichierCSV\testcsv\testcsv1\obj\Debug\net10.0\testcsv1.csproj.Up2Date
