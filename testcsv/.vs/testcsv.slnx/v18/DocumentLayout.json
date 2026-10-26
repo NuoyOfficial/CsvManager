@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\matis\\Documents\\Informatique\\Programmation\\C#\\Visual Studio\\ProjetPerso\\LectureFichierCSV\\testcsv\\",
+  "WorkspaceRootPath": "C:\\Users\\matis\\Documents\\Informatique\\GitHubRepository\\CsvReader\\testcsv\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E4124396-25AE-C5A9-3DDF-99BECC3D9F4E}|testcsv1\\testcsv1.csproj|c:\\users\\matis\\documents\\informatique\\programmation\\c#\\visual studio\\projetperso\\lecturefichiercsv\\testcsv\\testcsv1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E4124396-25AE-C5A9-3DDF-99BECC3D9F4E}|testcsv1\\testcsv1.csproj|c:\\users\\matis\\documents\\informatique\\githubrepository\\csvreader\\testcsv\\testcsv1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4124396-25AE-C5A9-3DDF-99BECC3D9F4E}|testcsv1\\testcsv1.csproj|solutionrelative:testcsv1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\matis\\Documents\\Informatique\\Programmation\\C#\\Visual Studio\\ProjetPerso\\LectureFichierCSV\\testcsv\\testcsv1\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\matis\\Documents\\Informatique\\GitHubRepository\\CsvReader\\testcsv\\testcsv1\\Program.cs",
               "RelativeDocumentMoniker": "testcsv1\\Program.cs",
-              "ToolTip": "C:\\Users\\matis\\Documents\\Informatique\\Programmation\\C#\\Visual Studio\\ProjetPerso\\LectureFichierCSV\\testcsv\\testcsv1\\Program.cs",
+              "ToolTip": "C:\\Users\\matis\\Documents\\Informatique\\GitHubRepository\\CsvReader\\testcsv\\testcsv1\\Program.cs",
               "RelativeToolTip": "testcsv1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAuwGQAAACEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-24T21:51:57.82Z",
               "EditorCaption": ""

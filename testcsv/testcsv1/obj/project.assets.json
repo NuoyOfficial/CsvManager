@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matis\\Documents\\Informatique\\Programmation\\C#\\Visual Studio\\ProjetPerso\\LectureFichierCSV\\testcsv\\testcsv1\\testcsv1.csproj",
+      "projectUniqueName": "C:\\Users\\matis\\Documents\\Informatique\\GitHubRepository\\CsvReader\\testcsv\\testcsv1\\testcsv1.csproj",
       "projectName": "testcsv1",
-      "projectPath": "C:\\Users\\matis\\Documents\\Informatique\\Programmation\\C#\\Visual Studio\\ProjetPerso\\LectureFichierCSV\\testcsv\\testcsv1\\testcsv1.csproj",
+      "projectPath": "C:\\Users\\matis\\Documents\\Informatique\\GitHubRepository\\CsvReader\\testcsv\\testcsv1\\testcsv1.csproj",
       "packagesPath": "C:\\Users\\matis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matis\\Documents\\Informatique\\Programmation\\C#\\Visual Studio\\ProjetPerso\\LectureFichierCSV\\testcsv\\testcsv1\\obj\\",
+      "outputPath": "C:\\Users\\matis\\Documents\\Informatique\\GitHubRepository\\CsvReader\\testcsv\\testcsv1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\matis\\AppData\\Roaming\\NuGet\\NuGet.Config",
