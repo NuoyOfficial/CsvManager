@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using System.Linq.Expressions;
 
 namespace testcsv1
 {
@@ -40,7 +41,7 @@ namespace testcsv1
             Console.Clear();
             AfficherEntete("Lecture et calcule d'un fichier CSV");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Fin du programme");
+            Console.WriteLine($"{"Merci d'avoir utiliser nos services",76}");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("************************************************************************************************************************");
@@ -71,7 +72,7 @@ namespace testcsv1
         {
             //Déclaration des variables
             string reponseLu;
-            bool fichierAccessible;
+            bool fichierExiste, fichierCsv, fichierLisible = false, fichierCorrecte = false, contenuFichierCsv;
 
             //Demande d'une valeur string
             Console.Clear();
@@ -82,32 +83,118 @@ namespace testcsv1
             reponseLu = reponseLu.Trim(); //Convertire la réponse de l'utilisateur en retirant les espaces du début et fin
             Console.WriteLine();
 
-            //Vérification de l'existance du fichier spécifier
-            fichierAccessible = File.Exists(reponseLu);
+            //Vérification de l'existance du fichier spécifier, si il termine avec le .csv, si il est lisible, si son contenue est correcte et si l'utilisateur à l'autorisation 
+            fichierExiste = File.Exists(reponseLu);
+            fichierCsv = reponseLu.EndsWith(".csv", StringComparison.OrdinalIgnoreCase); //Vérifie si le fichier et en .csv et compare du texte sans tenir compte des majuscules et des minuscules.
+            fichierLisible = VerifierLisibiliteFichier(reponseLu); //Vérifie si le fichier est lisible et si l'utilisateur posséde les droits de l'ouvrir
+            contenuFichierCsv = VerifierContenuFichier(reponseLu);
 
-            if (fichierAccessible == false)
+            while (fichierCorrecte == false)
             {
-                //Vérification de la valeur string lu (Null + oui ou non)
-                while (fichierAccessible == false) 
+                if (fichierExiste == false)
                 {
                     Console.Clear();
                     AfficherEntete("Lecture et calcule d'un fichier CSV");
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine(message);
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("Le chemin spécifié ne correspond à aucun fichier, veuillez réessayer : ");
+                    Console.Write("Erreur : Le chemin spécifié ne correspond à aucun fichier existant. Veuillez réessayer : ");
                     Console.ForegroundColor = ConsoleColor.Green;
                     reponseLu = Console.ReadLine() ?? "0";
                     reponseLu = reponseLu.Trim(); //Convertire la réponse de l'utilisateur en supprimant les espaces du début et fin
-                    fichierAccessible = File.Exists(reponseLu);
+                    fichierExiste = File.Exists(reponseLu);
+                    fichierCsv = reponseLu.EndsWith(".csv", StringComparison.OrdinalIgnoreCase); //permet de comparer du texte sans tenir compte des majuscules et des minuscules.
                 }
-            }
 
+                else if (fichierCsv == false)
+                {
+                    Console.Clear();
+                    AfficherEntete("Lecture et calcule d'un fichier CSV");
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine(message);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Erreur : Le fichier spécifié ne possède pas l'extension .csv. Veuillez réessayer : ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    reponseLu = Console.ReadLine() ?? "0";
+                    reponseLu = reponseLu.Trim(); //Convertire la réponse de l'utilisateur en supprimant les espaces du début et fin
+                    fichierExiste = File.Exists(reponseLu);
+                    fichierCsv = reponseLu.EndsWith(".csv", StringComparison.OrdinalIgnoreCase); //permet de comparer du texte sans tenir compte des majuscules et des minuscules.
+                }
+
+                else if (fichierLisible == false)
+                {
+                    Console.Clear();
+                    AfficherEntete("Lecture et calcule d'un fichier CSV");
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine(message);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Erreur : Impossible d'ouvrir ce fichier en lecture. Vérifiez vos droits d'accès et réessayez : ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    reponseLu = Console.ReadLine() ?? "0";
+                    reponseLu = reponseLu.Trim(); //Convertire la réponse de l'utilisateur en supprimant les espaces du début et fin
+                    fichierExiste = File.Exists(reponseLu);
+                    fichierCsv = reponseLu.EndsWith(".csv", StringComparison.OrdinalIgnoreCase); //permet de comparer du texte sans tenir compte des majuscules et des minuscules.
+                    fichierLisible = VerifierLisibiliteFichier(reponseLu);
+                }
+
+                else if (contenuFichierCsv == false)
+                {
+                    Console.Clear();
+                    AfficherEntete("Lecture et calcule d'un fichier CSV");
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine(message);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Erreur : Le fichier spécifier est vide ou ne contient pas de csv. Veuillez réessayer : ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    reponseLu = Console.ReadLine() ?? "0";
+                    reponseLu = reponseLu.Trim(); //Convertire la réponse de l'utilisateur en supprimant les espaces du début et fin
+                    fichierExiste = File.Exists(reponseLu);
+                    fichierCsv = reponseLu.EndsWith(".csv", StringComparison.OrdinalIgnoreCase); //permet de comparer du texte sans tenir compte des majuscules et des minuscules.
+                    fichierLisible = VerifierLisibiliteFichier(reponseLu);
+                    contenuFichierCsv = VerifierContenuFichier(reponseLu);
+                }
+
+                else
+                    fichierCorrecte = true;
+            }
+              
+            Console.WriteLine();
             Console.ForegroundColor= ConsoleColor.DarkGreen;
-            Console.Write("Chemin d'accès correcte (Entrée pour continuer) ");
+            Console.Write("Chemin d'accès correct. Appuyez sur Entrée pour continuer.");
             Console.ReadKey();
 
             return reponseLu;
+        }
+
+        //Fonction VerifierLisibiliteFichier
+        private static bool VerifierLisibiliteFichier(string cheminFichier)
+        {
+            try
+            {
+                using (FileStream fichier = File.OpenRead(cheminFichier))
+                {
+                    return true;
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+           
+        }
+
+        //Fonction VerifierContenuFichier
+        private static bool VerifierContenuFichier(string cheminFichier)
+        {
+            try
+            {
+                return File.ReadLines(cheminFichier).Any(ligne => !string.IsNullOrWhiteSpace(ligne));
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         //Fonction LireTexteOuiNon
@@ -170,7 +257,7 @@ namespace testcsv1
 
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.Write("Lecture terminée (Entrée pour continuer) ");
+                Console.Write("Lecture terminée. Appuyez sur Entrée pour continuer.");
                 Console.ReadKey();
                 Console.Clear();
                 AfficherEntete("Lecture et calcule d'un fichier CSV");
@@ -216,15 +303,15 @@ namespace testcsv1
 
                     //Affichage des résultats
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.Write($"{"Volume du Cône,"} {iteration,1} : ");
+                    Console.Write($"{"Volume du Cône,"} {iteration,2} :");
                     Console.ForegroundColor = ConsoleColor.Magenta;
-                    Console.WriteLine($"{volumeCone,9:F2}");
-                    Console.WriteLine();
+                    Console.WriteLine($"{volumeCone,12:F2}");
                     System.Threading.Thread.Sleep(500);
                 }
 
+                Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.Write("Calcule terminé (Entrée pour continuer)");
+                Console.Write("Calcule terminé. Appuyez sur Entrée pour continuer.");
                 Console.ReadKey();
                 Console.WriteLine();
             }
