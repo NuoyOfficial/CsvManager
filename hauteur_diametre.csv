@@ -1,2 +1,8 @@
-test;test2
-test3;test4
+id;prenom;age;taille
+
+0;matisse;18;1m77
+1;thomas;21;1m75
+2;Floscel;18;1m80
+id;prenom;age;taille
+
+

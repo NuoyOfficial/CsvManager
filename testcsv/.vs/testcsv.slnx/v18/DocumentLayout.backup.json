@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{E4124396-25AE-C5A9-3DDF-99BECC3D9F4E}|testcsv1\\testcsv1.csproj|c:\\users\\matis\\documents\\informatique\\githubrepository\\csvreader\\testcsv\\testcsv1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4124396-25AE-C5A9-3DDF-99BECC3D9F4E}|testcsv1\\testcsv1.csproj|solutionrelative:testcsv1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B18E33E-6B3A-4E46-9095-379290E4878C}|CSV-MANAGERV1.0\\CSV-MANAGERV1.0.csproj|c:\\users\\matis\\documents\\informatique\\githubrepository\\csvreader\\testcsv\\csv-managerv1.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B18E33E-6B3A-4E46-9095-379290E4878C}|CSV-MANAGERV1.0\\CSV-MANAGERV1.0.csproj|solutionrelative:csv-managerv1.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,9 +28,22 @@
               "RelativeDocumentMoniker": "testcsv1\\Program.cs",
               "ToolTip": "C:\\Users\\matis\\Documents\\Informatique\\GitHubRepository\\CsvReader\\testcsv\\testcsv1\\Program.cs",
               "RelativeToolTip": "testcsv1\\Program.cs",
-              "ViewState": "AgIAAOIAAAAAAAAAAAAewOwAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-24T21:51:57.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\matis\\Documents\\Informatique\\GitHubRepository\\CsvReader\\testcsv\\CSV-MANAGERV1.0\\Program.cs",
+              "RelativeDocumentMoniker": "CSV-MANAGERV1.0\\Program.cs",
+              "ToolTip": "C:\\Users\\matis\\Documents\\Informatique\\GitHubRepository\\CsvReader\\testcsv\\CSV-MANAGERV1.0\\Program.cs",
+              "RelativeToolTip": "CSV-MANAGERV1.0\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYBAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T22:29:55.933Z",
               "EditorCaption": ""
             }
           ]

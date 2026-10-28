@@ -8,28 +8,31 @@ namespace testcsv1
         static void Main(string[] args)
         {
             //Déclaration des variables
-            string reponseUtilisateurCsv, reponseUtilisateurRecommencer, cheminFichierCsvLu;
+            string reponseUtilisateurLireCsv, reponseUtilisateurRecommencer, cheminFichierCsvLu, reponseUtilisateurModifierCsv;
 
             //Recommence tant que l'utilisateur répond oui
             do
             {
                 //Affichage de l'entête grâce à la fonction AfficherEntete
-                AfficherEntete("Lecture et calcule d'un fichier CSV");
+                AfficherEntete("CSV-MANAGER");
 
                 //Demande à l'utilisateur le chemin du fichier Csv
                 cheminFichierCsvLu = LireCheminAcces("Veuillez spécifier le chemin d'accès du fichier CSV : ");
 
-                //Demande à l'utilisateur si il souhaite lire les valeurs du fichier CSV grâce à la fonction lireTexte
-                reponseUtilisateurCsv = LireTexteOuiNon("Souhaitez vous lire le contenu du fichier csv ? (Répondez par oui ou non) : ");
+                //Demande à l'utilisateur si il souhaite lire le contenu du fichier CSV grâce à la fonction LireTexteOuiNon
+                reponseUtilisateurLireCsv = LireTexteOuiNon("Souhaitez vous lire le contenu du fichier csv ? (Répondez par oui ou non) : ");
 
                 //Lecture du fichier.csv grâce à la fonction AfficherCsv en fonction du choix de l'utilisateur
-                LectureCsv(reponseUtilisateurCsv, cheminFichierCsvLu);
+                LectureCsv(reponseUtilisateurLireCsv, cheminFichierCsvLu);
+
+                //Demande à l'utilisateur si il souhaite modifier le contenu du fichier CSV grâce à la fonction LireTexteOuiNon
+                reponseUtilisateurModifierCsv = LireTexteOuiNon("Souhaitez vous modifier le contenu du fichier csv ? (Répondez par oui ou non) : ");
 
                 //Demande à l'utilisateur si il souhaite calculer les valeurs du fichier CSV grâce à la fonction LireTexte
-                reponseUtilisateurCsv = LireTexteOuiNon("Souhaitez vous calculer le contenu du fichier csv ? (Répondez par oui ou non) : ");
+                //reponseUtilisateurCsv = LireTexteOuiNon("Souhaitez vous calculer le contenu du fichier csv ? (Répondez par oui ou non) : ");
 
                 //Lecture et calcule du fichier.csv grâce à la fonction LireCsv en fonction du choix de l'utilisateur
-                CalculerCsv(reponseUtilisateurCsv, cheminFichierCsvLu);
+                //CalculerCsv(reponseUtilisateurCsv, cheminFichierCsvLu);
 
                 //Demande à l'utilisateur si il souhaite recommencer
                 reponseUtilisateurRecommencer = LireTexteOuiNon("Souhaitez vous recommencer ? (Répondez par oui ou non) : ");
@@ -39,7 +42,7 @@ namespace testcsv1
 
             //Affichage du message de fin du programme en fonction de la réponse de l'utilisateur
             Console.Clear();
-            AfficherEntete("Lecture et calcule d'un fichier CSV");
+            AfficherEntete("CSV-MANAGER");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"{"Merci d'avoir utiliser nos services",76}");
             Console.WriteLine();
@@ -61,7 +64,7 @@ namespace testcsv1
             Console.ForegroundColor= ConsoleColor.Cyan;
             Console.WriteLine("************************************************************************************************************************");
             Console.ForegroundColor=ConsoleColor.Green;
-            Console.WriteLine($"{messageEntete,77}");
+            Console.WriteLine($"{messageEntete,65}");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("************************************************************************************************************************");
             Console.WriteLine();
@@ -76,7 +79,7 @@ namespace testcsv1
 
             //Demande d'une valeur string
             Console.Clear();
-            AfficherEntete("Lecture et calcule d'un fichier CSV");
+            AfficherEntete("CSV-MANAGER");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.Write(message);
             reponseLu = Console.ReadLine() ?? "0";
@@ -94,7 +97,7 @@ namespace testcsv1
                 if (fichierExiste == false)
                 {
                     Console.Clear();
-                    AfficherEntete("Lecture et calcule d'un fichier CSV");
+                    AfficherEntete("CSV-MANAGER");
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine(message);
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -109,7 +112,7 @@ namespace testcsv1
                 else if (fichierCsv == false)
                 {
                     Console.Clear();
-                    AfficherEntete("Lecture et calcule d'un fichier CSV");
+                    AfficherEntete("CSV-MANAGER");
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine(message);
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -124,7 +127,7 @@ namespace testcsv1
                 else if (fichierLisible == false)
                 {
                     Console.Clear();
-                    AfficherEntete("Lecture et calcule d'un fichier CSV");
+                    AfficherEntete("CSV-MANAGER");
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine(message);
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -140,7 +143,7 @@ namespace testcsv1
                 else if (contenuFichierCsv == false)
                 {
                     Console.Clear();
-                    AfficherEntete("Lecture et calcule d'un fichier CSV");
+                    AfficherEntete("CSV-MANAGER");
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine(message);
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -205,7 +208,7 @@ namespace testcsv1
 
             //Demande d'une valeur string
             Console.Clear();
-            AfficherEntete("Lecture et calcule d'un fichier CSV");
+            AfficherEntete("CSV-MANAGER");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.Write(message);
             reponseLu = Console.ReadLine() ?? "0";
@@ -215,7 +218,7 @@ namespace testcsv1
             while (reponseLu != "oui" && reponseLu != "non")
             {
                 Console.Clear();
-                AfficherEntete("Lecture et calcule d'un fichier CSV");
+                AfficherEntete("CSV-MANAGER");
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine(message);
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -236,23 +239,26 @@ namespace testcsv1
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.Clear();
-                AfficherEntete("Lecture et calcule d'un fichier CSV");
+                AfficherEntete("CSV-MANAGER");
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Lecture en cours... :");
 
                 //Lecture du fichier CSV avec une boucle For Each
-                foreach (string ligne in File.ReadLines(cheminFichierCsv))
+                foreach (string ligne in File.ReadLines(cheminFichierCsv)) //Lis toutes les lignes jusqu'à ce qu'il n'y en est plus 
                 {
                     //Création du tableau et de la séparation pour la lecture
                     string[] colonnes = ligne.Split(';');
 
-                    string hauteur = (colonnes[0]);
-                    string rayon = (colonnes[1]);
-
                     //Affichage du contenu du fichier Csv
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine($"{hauteur,6}{rayon,6}");
-                    System.Threading.Thread.Sleep(500);
+                    for (int i = 0; i < colonnes.Length; i++) //tant qu'il reste des colonnes, cette boucle affiche le contenue
+                    {
+                        Console.Write($"{colonnes[i],-10}");
+                        System.Threading.Thread.Sleep(100);
+                    }
+
+                    Console.WriteLine();
+                    
                 }
 
                 Console.WriteLine();
@@ -260,11 +266,22 @@ namespace testcsv1
                 Console.Write("Lecture terminée. Appuyez sur Entrée pour continuer.");
                 Console.ReadKey();
                 Console.Clear();
-                AfficherEntete("Lecture et calcule d'un fichier CSV");
+                AfficherEntete("CSV-MANAGER");
             }
 
            
         }
+
+
+
+
+
+
+
+
+
+
+
 
         //Fonction CalculerCsv
         private static void CalculerCsv(string reponseUtilisateur, string cheminFichierCsv )
@@ -281,7 +298,7 @@ namespace testcsv1
             {
                 //Lecture du fichier CSV avec une boucle For Each
                 Console.Clear();
-                AfficherEntete("Lecture et calcule d'un fichier CSV");
+                AfficherEntete("CSV-MANAGER");
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Calcule en cours... : ");
 
