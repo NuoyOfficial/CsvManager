@@ -1,12 +1,5 @@
 C:\Users\matis\Documents\Informatique\GitHubRepository\CsvReader\hauteur_diametre.csv
 
-ajouter un moyen de crée un fichier, de le modifier, de l'exporter ou de le supprimer
-
-ajouter un moyen de pouvoir sauvegarder un fichier et de le retrouver en réouvrant le programme
-
-Si l'utilisateur crée un nouveau fichier et souhaite l'ouvrir il sera vide donc erreur de lecture, à corrigé
-
-
 
 ================================                                  
        GESTIONNAIRE DE CSV
@@ -23,13 +16,14 @@ Votre choix :
 Fichier actuel : personnes.csv
 ================================
 
-1. Afficher les données
+1. Afficher le contenu
 2. Ajouter une ligne
-3. Modifier une ligne
-4. Supprimer une ligne
+3. Supprimer une ligne
+4. Modifier une ligne
 5. Sauvegarder
 6. Exporter une copie
 7. Supprimer le fichier
-8. Retour au menu principal
+8. Renommer le fichier
+9. Retour au menu principal
 
 Votre choix :

@@ -2,13 +2,15 @@
 {
     internal class Program
     {
+
+        //Déclaration des constantes
+        const string MESSAGE_LIRE_CHOIX = "Votre choix : ";
+
         static void Main(string[] args)
         {
-            //Déclaration des constantes
-            const string MESSAGE_LIRE_CHOIX = "Votre choix : ";
 
             //Déclaration des variables
-            string choixUtilisateurMenuPrincipal = "", choixUtilisateurMenuFichier = "", FichierLu, CheminFichierLu;
+            string choixUtilisateurMenuPrincipal = "", choixUtilisateurMenuFichier = "", fichierLu, cheminFichierLu;
 
             do
             {
@@ -23,8 +25,8 @@
                 if (choixUtilisateurMenuPrincipal == "1")
                 {
 
-                    CheminFichierLu = LireCheminFichier("Veuillez spécifier le répertoire où le fichier sera créé : ");
-                    CreeFichierCsv(CheminFichierLu, "Veuillez spécifier le nom du fichier : ");
+                    cheminFichierLu = LireCheminFichier("Veuillez spécifier le répertoire où le fichier sera créé : ");
+                    CreeFichierCsv(cheminFichierLu, "Veuillez spécifier le nom du fichier : ");
 
                 }
 
@@ -32,28 +34,38 @@
                 if (choixUtilisateurMenuPrincipal == "2")
                 {
                     //Demande à l'utilisateur le chemin du fichier à ouvrir et vérifier si tout est correcte grâce à la fonction LireCheminAcces
-                    FichierLu = LireFichier("Veuillez spécifier le chemin d'accès du fichier : ");
+                    fichierLu = LireFichier("Veuillez spécifier le chemin d'accès du fichier : ");
 
                     do
                     {
                         //Affichage du Menu Fichier
-                        EnteteMenuFichier(FichierLu);
+                        EnteteMenuFichier(fichierLu);
 
                         //Demande à l'utilisateur son choix de 1 à 9
-                        choixUtilisateurMenuFichier = LireChoixMenuFichier(MESSAGE_LIRE_CHOIX, FichierLu);
+                        choixUtilisateurMenuFichier = LireChoixMenuFichier(MESSAGE_LIRE_CHOIX, fichierLu);
 
                         //Option 1 Choisi du Menu Fichier (Lire le contenue du fichier)
                         if (choixUtilisateurMenuFichier == "1")
                         {
-                            //Lecture du fichier fourni par l'utilisateur
-                            LectureCsv(FichierLu);
+
+                            LectureCsv(fichierLu);
 
                         }
 
                         //Option 2 Choisi du Menu Fichier (Ajouter une ligne dans le csv)
                         if (choixUtilisateurMenuFichier == "2")
                         {
-                            AjouterLigneCsv("");
+
+                            AjouterLigneCsv(fichierLu, "Veuillez spécifier les valeurs de la nouvelle ligne en utilisant le signe \";\" comme séparateur de colonnes : ");
+
+                        }
+
+                        //Option 3 Choisi du Menu Fichier (Supprimer une ligne dans le csv)
+                        if (choixUtilisateurMenuFichier == "3")
+                        {
+
+                            SupprimerLigne(fichierLu, "Veuillez spécifier le numéro de la ligne à supprimer : ");
+
                         }
 
 
@@ -195,6 +207,36 @@
 
             return choixLu;
 
+        }
+
+        //Fonction LireTexteOuiNon
+        private static string LireTexteOuiNon(string cheminFichier, string message)
+        {
+            //Déclaration des variables
+            string choixLu;
+
+            //Demande d'une valeur string
+            Console.Clear();
+            EnteteMenuFichier(cheminFichier);
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write(message);
+            choixLu = Console.ReadLine() ?? "0";
+            choixLu = choixLu.Trim().ToLower().Replace(" ", ""); //Convertire la réponse de l'utilisateur en minuscule et retirer les espaces 
+
+            //Vérification de la valeur string lu (Null + oui ou non)
+            while (choixLu != "oui" && choixLu != "non")
+            {
+
+                EnteteMenuFichier(cheminFichier);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("Erreur: Réponse incorrecte, veuillez répondre par oui ou non : ");
+                Console.ForegroundColor = ConsoleColor.White;
+                choixLu = Console.ReadLine() ?? "0";
+                choixLu = choixLu.Trim().ToLower().Replace(" ", ""); //Convertire la réponse de l'utilisateur en minuscule et retirer les espaces 
+
+            }
+
+            return choixLu;
         }
 
         //Fonction LireFichier
@@ -482,7 +524,7 @@
 
             if (contenuFichierCsv == false)
             {
-                Console.WriteLine("Le fichier csv est vide");
+                Console.WriteLine("Ce fichier CSV est vide ou erroné");
             }
             else
             {
@@ -571,8 +613,136 @@
         }
 
         //Fonction AjouterLigneCsv
-        private static void AjouterLigneCsv(string message)
+        private static void AjouterLigneCsv(string cheminFichier, string message)
         {
+            //Déclaration des variables
+            string ligneLu;
+            bool ligneCree = false;
+
+            //Demande à l'utilisateur la ligne à ajouter + boucle de vérification
+            EnteteMenuFichier(cheminFichier);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(message);
+            Console.ForegroundColor = ConsoleColor.White;
+            ligneLu = Console.ReadLine() ?? "0";
+            ligneLu = ligneLu.Trim();
+
+            while (ligneCree == false)
+            {
+                if (ligneLu == "")
+                {
+                    while (ligneLu == "")
+                    {
+                        EnteteMenuFichier(cheminFichier);
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write(message);
+                        ligneLu = Console.ReadLine() ?? "0";
+                        ligneLu = ligneLu.Trim();
+                    }
+                }
+
+                try
+                {
+                    using (StreamWriter fichier = new StreamWriter(cheminFichier, true))
+                    {
+
+                        fichier.WriteLine(ligneLu);
+
+                    }
+
+                    ligneCree = true;
+
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine();
+                    Console.Write($"Une ligne avec {ligneLu} a été ajoutée avec succès. Appuyez sur entrée pour continuer");
+                    Console.ReadKey();
+
+                }
+                catch (Exception)
+                {
+
+                    EnteteMenuFichier(cheminFichier);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Erreur: La ligne spécifier présente des erreurs de syntaxes et/ou vous ne possèder pas l'accès au fichier. Vérifiez et réessayer : ");
+                    ligneLu = Console.ReadLine() ?? "0";
+                    ligneLu = ligneLu.Trim();
+
+                }
+            }
+
+        }
+
+        //Fonction AjouterLigneCsv
+        private static void SupprimerLigne(string cheminFichier, string message)
+        {
+            //Déclaration des variables
+            string ligneLu, choixUtilisateur;
+            int ligne;
+            bool etatTryparse = false, contenuFichier;
+
+            //Vérification du contenu du fichier
+            contenuFichier = VerifierContenuFichier(cheminFichier);
+
+            if (contenuFichier == false)
+            {
+                EnteteMenuFichier(cheminFichier);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write("Ce fichier CSV est vide ou erroné");
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.Write($"Appuyez sur entrée pour continuer");
+                Console.ReadKey();
+            }
+            else
+            {
+                //Demande à l'utilisateur la ligne à supprimer + boucle de vérification
+                EnteteMenuFichier(cheminFichier);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(message);
+                Console.ForegroundColor = ConsoleColor.White;
+                ligneLu = Console.ReadLine() ?? "0";
+                ligneLu = ligneLu.Trim();
+                etatTryparse = int.TryParse(ligneLu, out ligne);
+
+                while (etatTryparse == false)
+                {
+                    EnteteMenuFichier(cheminFichier);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Veuillez entrer un valeur de type entier (1,2,6...). Veuillez réessayer : ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    ligneLu = Console.ReadLine() ?? "0";
+                    ligneLu = ligneLu.Trim();
+                    etatTryparse = int.TryParse(ligneLu, out ligne);
+                }
+
+                //Demande de confirmation à l'utilisateur pour la suppression de la ligne
+                choixUtilisateur = LireTexteOuiNon(cheminFichier, $"Êtes vous sures de vouloir supprimer la ligne {ligneLu}. Répondez par oui ou non : ");
+
+                //Suppression de la ligne spécifier par l'utilisateur
+                if (choixUtilisateur == "oui")
+                {
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+                }
+
+                else
+                {
+                    return;
+                }
+            }
 
         }
     }
