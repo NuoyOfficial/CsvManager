@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSV-MANAGERV1.0")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3205c335e66c38f130554d273331711201eb3c37")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12cb3e6494d6e22144e99c438568e0bbfd99747e")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSV-MANAGERV1.0")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSV-MANAGERV1.0")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

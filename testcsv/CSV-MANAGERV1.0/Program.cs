@@ -721,7 +721,7 @@
 
                 //Suppression de la ligne spécifier par l'utilisateur
                 if (choixUtilisateur == "oui")
-                {
+                { 
                     
 
 
@@ -743,6 +743,95 @@
                     return;
                 }
             }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Fonction CalculerCsv
+        private static void CalculerCsv(string reponseUtilisateur, string cheminFichierCsv)
+        {
+            //Déclaration des constantes
+            const double PI = Math.PI;
+
+            //Déclaration des variables
+            double volumeCone;
+            int iteration = 0;
+
+            //Exécution ou non en fonction de la réponse de l'utilisateur
+            if (reponseUtilisateur == "oui")
+            {
+                //Lecture du fichier CSV avec une boucle For Each
+                Console.Clear();
+                EnteteMenuFichier(cheminFichierCsv);
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("Calcule en cours... : ");
+
+                foreach (string ligne in File.ReadLines(cheminFichierCsv).Skip(1))
+                {
+                    //Stockage du nombre d'itération 
+                    iteration += 1;
+
+                    //Création du tableau et de la séparation pour la lecture
+                    string[] colonnes = ligne.Split(';');
+
+                    //Conversion des valeur dans le fichier Csv de string à double
+                    double hauteur = double.Parse(colonnes[0]);
+
+                    double rayon = double.Parse(colonnes[1]);
+
+                    //Calcule du volume du cône en fonction des données du fichier csv
+                    volumeCone = (1.0 / 3.0) * PI * (rayon * rayon) * hauteur;
+
+                    //Affichage des résultats
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write($"{"Volume du Cône,"} {iteration,2} :");
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine($"{volumeCone,12:F2}");
+                    System.Threading.Thread.Sleep(500);
+                }
+
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write("Calcule terminé. Appuyez sur Entrée pour continuer.");
+                Console.ReadKey();
+                Console.WriteLine();
+            }
+
 
         }
     }
